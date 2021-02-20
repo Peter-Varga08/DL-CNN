@@ -14,23 +14,21 @@ from typing import Callable
 
 def initialize_model(model_name, num_classes):
     model = None
-    input_size = 0
 
     if model_name == "resnet18":
-        """ Resnet18
-        """
+        """ Resnet18 """
+
         model = models.resnet18()
-        num_ftrs = model.fc.in_features
-        model.fc = nn.Linear(num_ftrs, num_classes)
         input_size = 224
 
     elif model_name == "resnet34":
-        """ Resnet34
-        """
+        """ Resnet34 """
+
         model = models.resnet34()
-        num_ftrs = model.fc.in_features
-        model.fc = nn.Linear(num_ftrs, num_classes)
         input_size = 224
+
+    num_ftrs = model.fc.in_features
+    model.fc = nn.Linear(num_ftrs, num_classes)
 
     return model, input_size
 
@@ -93,10 +91,19 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, num_ep
     return model, val_acc_history
 
 
+# This function will recursively replace all relu module to selu module.
+def replace_act_funct(model, current, new):
+    for child_name, child in model.named_children():
+        if isinstance(child, current):
+            setattr(model, child_name, new)
+        else:
+            replace_act_funct(child, current, new)
+
+
 data_dir = f"Dataset{os.path.sep}Food"
 model_name = "resnet18"
 num_classes = 11
-batch_size = 8  # this can be increased accordingly, check CPU/GPU load, for me it only consumed 20% GPU
+batch_size = 16  # this can be increased accordingly, check CPU/GPU load, for me it only consumed 20% GPU
 num_epochs = 15
 
 model, input_size = initialize_model(model_name, num_classes)
@@ -129,7 +136,7 @@ optimizer = optim.SGD(params_to_update, lr=0.001, momentum=0.9)
 
 # train and evaluate
 criterion = nn.CrossEntropyLoss()
-model, hist = train_model(model, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
+# model, hist = train_model(model, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
 
 # just some random variables to allow playing around in the console
 val_dat = iter(dataloaders_dict['val'])
