@@ -12,25 +12,33 @@ import copy
 from typing import Callable
 
 
-def initialize_model(model_name, num_classes):
+def initialize_model(model_name, num_classes, pretrained=False):
     model = None
 
     if model_name == "resnet18":
         """ Resnet18 """
-
-        model = models.resnet18()
-        input_size = 224
+        model = models.resnet18(pretrained=pretrained)
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, num_classes)
 
     elif model_name == "resnet34":
         """ Resnet34 """
+        model = models.resnet34(pretrained=pretrained)
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, num_classes)
 
-        model = models.resnet34()
-        input_size = 224
+    return model
 
-    num_ftrs = model.fc.in_features
-    model.fc = nn.Linear(num_ftrs, num_classes)
 
-    return model, input_size
+def initialize_optimizer(optim_name, params, lr=0.001, momentum=0.0,
+                         weight_decay=0, betas=(0, 0), eps=0):
+    if optim_name == "SGD":
+        optimizer = optim.SGD(params, lr=lr, momentum=momentum, weight_decay=weight_decay)
+    elif optim_name == "Adam":
+        optimizer = optim.Adam(params, lr=lr, weight_decay=weight_decay, betas=betas, eps=eps)
+    else:
+        raise TypeError("Wrong optimizer name was given.")
+    return optimizer
 
 
 def train_model(model, dataloaders: dict, criterion: Callable, optimizer, num_epochs=15):
@@ -43,12 +51,14 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, num_ep
     # copy model weights
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = 0.0
+    epoch_losses = []
+    epoch_accs = []
     for epoch in range(num_epochs):
         print(f'Epoch {epoch}/{num_epochs-1}')
         print('-'*10)
         # Each epoch has a training and validation phase
-        for phase in ['train', 'val']:
-            if phase == 'train':
+        for phase in [train_folder, validation_folder]:
+            if phase == train_folder:
                 model.train()
             else:
                 model.eval()
@@ -62,21 +72,22 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, num_ep
                 optimizer.zero_grad()
                 # forward
                 # track history if in train
-                with torch.set_grad_enabled(phase == "train"):
+                with torch.set_grad_enabled(phase == train_folder):
                     outputs = model(inputs)
                     loss = criterion(outputs, labels)
                     _, preds = torch.max(outputs, 1)
-                    if phase == "train":
+                    if phase == train_folder:
                         loss.backward()
                         optimizer.step()
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
             epoch_loss = running_loss / len(dataloaders[phase].dataset)
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
-
+            epoch_losses.append(epoch_loss)
+            epoch_accs.append(epoch_acc)
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
             # deep copy the model
-            if phase == 'val':
+            if phase == validation_folder:
                 val_acc_history.append(epoch_acc)
                 if epoch_acc > best_acc:
                     best_acc = epoch_acc
@@ -88,7 +99,7 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, num_ep
 
     # load best model weights
     model.load_state_dict(best_model_wts)
-    return model, val_acc_history
+    return model, val_acc_history, [epoch_losses, epoch_accs]
 
 
 # This function will recursively replace all relu module to selu module.
@@ -101,14 +112,10 @@ def replace_act_funct(model, current, new):
 
 
 data_dir = f"Dataset{os.path.sep}Food"
-model_name = "resnet18"
-num_classes = 11
+num_classes = 10
 batch_size = 16  # this can be increased accordingly, check CPU/GPU load, for me it only consumed 20% GPU
-num_epochs = 15
-
-model, input_size = initialize_model(model_name, num_classes)
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-model = model.to(device)
+num_epochs = 100
+input_size = 224
 
 train_folder = "train"
 validation_folder = "val"   # for parameter tuning
@@ -130,16 +137,21 @@ image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transf
 # Create training and validation dataloaders
 dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=batch_size,
                                                    shuffle=True, num_workers=4) for x in [train_folder, validation_folder]}
-
-params_to_update = model.parameters()
-optimizer = optim.SGD(params_to_update, lr=0.001, momentum=0.9)
-
-# train and evaluate
 criterion = nn.CrossEntropyLoss()
-# model, hist = train_model(model, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
+device = ('cuda' if torch.cuda.is_available() else 'cpu')
 
-# just some random variables to allow playing around in the console
-val_dat = iter(dataloaders_dict['val'])
-images, labels = val_dat.next()
-images = images.to('cuda')
-labels = labels.to('cuda')
+if __name__ == "__main__":
+    model_name = "resnet18"
+    model = initialize_model(model_name, num_classes)
+    model = model.to(device)
+    params_to_update = model.parameters()
+    optimizer = initialize_optimizer("SGD", params_to_update)
+
+    # train and evaluate
+    model, hist, epoch_info = train_model(model, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
+    with open(f"epoch_losses_{train_folder}.txt", "w") as file_obj:
+        for item in epoch_info[0]:
+            file_obj.write(f"{item}\n")
+    with open(f"epoch_accs_{train_folder}.txt", "w") as file_obj:
+        for item in epoch_info[1]:
+            file_obj.write(f"{item}\n")

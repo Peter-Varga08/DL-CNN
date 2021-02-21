@@ -9,27 +9,31 @@ from imgaug import augmenters as iaa
 def augment_class(class_name):
     os.chdir(class_name)
 
-    img_names = glob.glob('*.jpg')
-    img_amt = len(img_names)
-    req_augmt = 1500 - img_amt  # number of missing datapoints, compared to desired amount
+    all_images = glob.glob('*.jpg')
+    augmented_images = glob.glob('*_.jpg')  # already existing, augmented images on the hardware
+    all_img_amt = len(all_images)
+    augmt_img_amt = len(augmented_images)
+    req_augmt = 3000 - all_img_amt  # number of missing datapoints, compared to desired amount
 
     img_batch = []
     print(f"Reading images of class {class_name}...")
     for i in range(req_augmt):
-        chosen_img = img_names[random.randint(0, len(img_names)-1)]
+        chosen_img = all_images[random.randint(0, all_img_amt-augmt_img_amt-1)]
         img = np.array(Image.open(os.path.join(os.path.abspath('.'), chosen_img)))
         img_batch.append(img)
-    print("Augmentation in process...")
-    img_batch = aug.augment_images(img_batch)
-    print("Saving images...")
-    for idx, new_img in enumerate(img_batch):
-        Image.fromarray(new_img).save(f"{img_amt+idx}_.jpg")
-    print(f"{class_name} class augmentation complete.\n")
+        if (i+1) % 10 == 0:  # augment & save images in batches of 10 to consume less memory
+            # print("Augmentation in process...")
+            img_batch = aug.augment_images(img_batch)   # augment_images() accepts a 4D np.array or list of 3D np.arrays
+            # print(f"Saving images...")
+            for idx, new_img in enumerate(img_batch):
+                Image.fromarray(new_img).save(f"{all_img_amt+i+idx+1}_.jpg")
+            print(f"{class_name} class batch augmentation complete.\nBatch count: {i//10}\n")
+            img_batch = []
 
     os.chdir("..")
 
 
-aug = iaa.SomeOf(3, [
+aug = iaa.SomeOf(4, [
     iaa.OneOf([
         iaa.Affine(scale=(0.5, 1.5)),
         iaa.ScaleX((0.5, 1.5)),
@@ -51,7 +55,8 @@ aug = iaa.SomeOf(3, [
     ]),
     iaa.OneOf([
         iaa.imgcorruptlike.GaussianNoise(severity=random.randint(1, 3)),
-        iaa.imgcorruptlike.ImpulseNoise(severity=random.randint(1, 3))
+        iaa.imgcorruptlike.ImpulseNoise(severity=random.randint(1, 3)),
+        iaa.imgcorruptlike.ElasticTransform(severity=random.randint(1, 3)),
     ]),
     iaa.OneOf([
         iaa.AveragePooling(2),
@@ -65,7 +70,6 @@ aug = iaa.SomeOf(3, [
     ]),
 ])
 
-# paths to operate with during augmentation 
 start_path = os.path.abspath(f'.{os.path.sep}Dataset{os.path.sep}train_augmented')
 os.chdir(start_path)
 

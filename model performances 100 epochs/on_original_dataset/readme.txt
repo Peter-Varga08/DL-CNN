@@ -1,0 +1,1 @@
+the "_train" extension in the txts' name refers to them being trained on the original "train" folder (other option is train_augmented_<number>), not to the results originating from the train folder only; it uses the "val" folder for evaluation as well
