@@ -130,3 +130,6 @@ dmypy.json
 
 # Data folder
 Dataset
+figures
+Peregrine_jobs
+model performances 100 epochs

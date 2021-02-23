@@ -31,17 +31,17 @@ def initialize_model(model_name, num_classes, pretrained=False):
 
 
 def initialize_optimizer(optim_name, params, lr=0.001, momentum=0.0,
-                         weight_decay=0, betas=(0, 0), eps=0):
+                         weight_decay=0.0, betas=(0, 0), eps=0):
     if optim_name == "SGD":
         optimizer = optim.SGD(params, lr=lr, momentum=momentum, weight_decay=weight_decay)
     elif optim_name == "Adam":
         optimizer = optim.Adam(params, lr=lr, weight_decay=weight_decay, betas=betas, eps=eps)
     else:
-        raise TypeError("Wrong optimizer name was given.")
+        raise ValueError("Invalid optimizer name was given.")
     return optimizer
 
 
-def train_model(model, dataloaders: dict, criterion: Callable, optimizer, num_epochs=15):
+def train_model(model, dataloaders: dict, criterion: Callable, optimizer, regulrz=None, num_epochs=15):
     """ The function handles both the training and validation of a given model.
     It trains for the specified number of epochs and runs a full validation step afterwards, while keeping track of the
     best performing model (validation accuracy).
@@ -67,6 +67,8 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, num_ep
             # Iterate over data
             for inputs, labels in dataloaders[phase]:
                 inputs = inputs.to('cuda')
+                if regulrz:
+                    regulrz(inputs)
                 labels = labels.to('cuda')
                 # zero the parameter gradients
                 optimizer.zero_grad()
@@ -113,9 +115,17 @@ def replace_act_funct(model, current, new):
 
 data_dir = f"Dataset{os.path.sep}Food"
 num_classes = 10
-batch_size = 16  # this can be increased accordingly, check CPU/GPU load, for me it only consumed 20% GPU
+batch_size = 64  # this can be increased accordingly, check CPU/GPU load, for me it only consumed 20% GPU
 num_epochs = 100
 input_size = 224
+
+
+# original dropout_list and weight_decay_list are not doable in one peregrine job due to too high runtime,
+# thus change regularizations according to experiment setting
+dropout_list = [nn.Dropout(p=x, inplace=True) for x in [0.1, 0.2, 0.3]]
+weight_decay_list = [1e-3, 1e-2, 1e-1]
+# dropout_list = [nn.Dropout(p=0.1, inplace=True)]
+# weight_decay_list = [1e-3]
 
 train_folder = "train"
 validation_folder = "val"   # for parameter tuning
@@ -126,10 +136,12 @@ data_transforms = {
     train_folder: transforms.Compose([
         transforms.Resize((input_size, input_size)),
         transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ]),
     validation_folder: transforms.Compose([
         transforms.Resize((input_size, input_size)),
         transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
 }
 
@@ -140,18 +152,45 @@ dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size
 criterion = nn.CrossEntropyLoss()
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 
+
 if __name__ == "__main__":
     model_name = "resnet18"
     model = initialize_model(model_name, num_classes)
     model = model.to(device)
     params_to_update = model.parameters()
-    optimizer = initialize_optimizer("SGD", params_to_update)
+    optim_name = "SGD"
+    dropout = False
+    weight_decay = False
 
-    # train and evaluate
-    model, hist, epoch_info = train_model(model, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
-    with open(f"epoch_losses_{train_folder}.txt", "w") as file_obj:
-        for item in epoch_info[0]:
-            file_obj.write(f"{item}\n")
-    with open(f"epoch_accs_{train_folder}.txt", "w") as file_obj:
-        for item in epoch_info[1]:
-            file_obj.write(f"{item}\n")
+    if dropout:
+        for drpt in dropout_list:
+            optimizer = initialize_optimizer(optim_name, params_to_update)
+            model, hist, epoch_info = train_model(model, dataloaders_dict, criterion,
+                                                  optimizer, regulrz=drpt, num_epochs=num_epochs)
+            with open(f"scratch-train_dropout-{drpt.p}_epoch_losses_{train_folder}.txt", "w") as file_obj:
+                for item in epoch_info[0]:
+                    file_obj.write(f"{item}\n")
+            with open(f"scratch-train_dropout-{drpt.p}_epoch_accs_{train_folder}.txt", "w") as file_obj:
+                for item in epoch_info[1]:
+                    file_obj.write(f"{item}\n")
+    elif weight_decay:
+        for wght_dec in weight_decay_list:
+            optimizer = initialize_optimizer(optim_name, params_to_update, weight_decay=wght_dec)
+            model, hist, epoch_info = train_model(model, dataloaders_dict, criterion,
+                                                  optimizer, regulrz=None, num_epochs=num_epochs)
+            with open(f"scratch-train_weight_dec-{wght_dec}_epoch_losses_{train_folder}.txt", "w") as file_obj:
+                for item in epoch_info[0]:
+                    file_obj.write(f"{item}\n")
+            with open(f"scratch-train_weight_dec-{wght_dec}_epoch_accs_{train_folder}.txt", "w") as file_obj:
+                for item in epoch_info[1]:
+                    file_obj.write(f"{item}\n")
+    else:
+        optimizer = initialize_optimizer(optim_name, params_to_update, momentum=0.9)
+        model, hist, epoch_info = train_model(model, dataloaders_dict, criterion,
+                                              optimizer, regulrz=None, num_epochs=num_epochs)
+        with open(f"scratch-train_epoch_losses_{train_folder}.txt", "w") as file_obj:
+            for item in epoch_info[0]:
+                file_obj.write(f"{item}\n")
+        with open(f"scratch-train_epoch_accs_{train_folder}.txt", "w") as file_obj:
+            for item in epoch_info[1]:
+                file_obj.write(f"{item}\n")

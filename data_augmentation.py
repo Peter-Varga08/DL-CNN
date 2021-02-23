@@ -33,7 +33,7 @@ def augment_class(class_name):
     os.chdir("..")
 
 
-aug = iaa.SomeOf(4, [
+aug = iaa.SomeOf(3, [
     iaa.OneOf([
         iaa.Affine(scale=(0.5, 1.5)),
         iaa.ScaleX((0.5, 1.5)),

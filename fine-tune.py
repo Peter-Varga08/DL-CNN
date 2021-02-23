@@ -19,12 +19,9 @@ optimizer = initialize_optimizer("SGD", params_to_update)
 # train and evaluate
 model, hist, epoch_info = train_model(model, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
 
-# with open("ResNet18_SGD_Augm_PreTrained.pickle", "wb") as file_obj:
-#     pickle.dump(model, file_obj)
-
-with open(f"epoch_losses_{train_folder}.txt", "w") as file_obj:
+with open(f"pre-trained_epoch_losses_{train_folder}.txt", "w") as file_obj:
     for item in epoch_info[0]:
         file_obj.write(f"{item}\n")
-with open(f"epoch_accs_{train_folder}.txt", "w") as file_obj:
+with open(f"pre-trained_epoch_accs_{train_folder}.txt", "w") as file_obj:
     for item in epoch_info[1]:
         file_obj.write(f"{item}\n")
