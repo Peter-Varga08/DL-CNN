@@ -1,0 +1,443 @@
+Epoch 0/99
+----------
+training Loss: 1.9982 Acc: 0.3452
+validation Loss: 1.6212 Acc: 0.5339
+Epoch 1/99
+----------
+training Loss: 1.3967 Acc: 0.6268
+validation Loss: 1.1953 Acc: 0.6776
+Epoch 2/99
+----------
+training Loss: 1.0832 Acc: 0.7116
+validation Loss: 0.9769 Acc: 0.7340
+Epoch 3/99
+----------
+training Loss: 0.8997 Acc: 0.7525
+validation Loss: 0.8438 Acc: 0.7570
+Epoch 4/99
+----------
+training Loss: 0.7866 Acc: 0.7767
+validation Loss: 0.7616 Acc: 0.7798
+Epoch 5/99
+----------
+training Loss: 0.7065 Acc: 0.7960
+validation Loss: 0.7006 Acc: 0.7930
+Epoch 6/99
+----------
+training Loss: 0.6424 Acc: 0.8091
+validation Loss: 0.6526 Acc: 0.8002
+Epoch 7/99
+----------
+training Loss: 0.5929 Acc: 0.8237
+validation Loss: 0.6204 Acc: 0.8086
+Epoch 8/99
+----------
+training Loss: 0.5516 Acc: 0.8342
+validation Loss: 0.5960 Acc: 0.8137
+Epoch 9/99
+----------
+training Loss: 0.5196 Acc: 0.8429
+validation Loss: 0.5731 Acc: 0.8200
+Epoch 10/99
+----------
+training Loss: 0.4898 Acc: 0.8513
+validation Loss: 0.5530 Acc: 0.8251
+Epoch 11/99
+----------
+training Loss: 0.4611 Acc: 0.8610
+validation Loss: 0.5337 Acc: 0.8335
+Epoch 12/99
+----------
+training Loss: 0.4392 Acc: 0.8675
+validation Loss: 0.5228 Acc: 0.8332
+Epoch 13/99
+----------
+training Loss: 0.4163 Acc: 0.8749
+validation Loss: 0.5094 Acc: 0.8350
+Epoch 14/99
+----------
+training Loss: 0.3998 Acc: 0.8790
+validation Loss: 0.4959 Acc: 0.8380
+Epoch 15/99
+----------
+training Loss: 0.3784 Acc: 0.8886
+validation Loss: 0.4889 Acc: 0.8413
+Epoch 16/99
+----------
+training Loss: 0.3612 Acc: 0.8924
+validation Loss: 0.4833 Acc: 0.8425
+Epoch 17/99
+----------
+training Loss: 0.3461 Acc: 0.8954
+validation Loss: 0.4722 Acc: 0.8467
+Epoch 18/99
+----------
+training Loss: 0.3328 Acc: 0.8997
+validation Loss: 0.4648 Acc: 0.8491
+Epoch 19/99
+----------
+training Loss: 0.3162 Acc: 0.9089
+validation Loss: 0.4603 Acc: 0.8494
+Epoch 20/99
+----------
+training Loss: 0.3027 Acc: 0.9117
+validation Loss: 0.4537 Acc: 0.8521
+Epoch 21/99
+----------
+training Loss: 0.2900 Acc: 0.9167
+validation Loss: 0.4484 Acc: 0.8521
+Epoch 22/99
+----------
+training Loss: 0.2772 Acc: 0.9207
+validation Loss: 0.4432 Acc: 0.8545
+Epoch 23/99
+----------
+training Loss: 0.2671 Acc: 0.9232
+validation Loss: 0.4369 Acc: 0.8590
+Epoch 24/99
+----------
+training Loss: 0.2521 Acc: 0.9309
+validation Loss: 0.4336 Acc: 0.8575
+Epoch 25/99
+----------
+training Loss: 0.2428 Acc: 0.9329
+validation Loss: 0.4309 Acc: 0.8566
+Epoch 26/99
+----------
+training Loss: 0.2341 Acc: 0.9351
+validation Loss: 0.4295 Acc: 0.8626
+Epoch 27/99
+----------
+training Loss: 0.2224 Acc: 0.9388
+validation Loss: 0.4284 Acc: 0.8608
+Epoch 28/99
+----------
+training Loss: 0.2131 Acc: 0.9430
+validation Loss: 0.4277 Acc: 0.8611
+Epoch 29/99
+----------
+training Loss: 0.2064 Acc: 0.9458
+validation Loss: 0.4218 Acc: 0.8602
+Epoch 30/99
+----------
+training Loss: 0.1950 Acc: 0.9489
+validation Loss: 0.4186 Acc: 0.8656
+Epoch 31/99
+----------
+training Loss: 0.1902 Acc: 0.9495
+validation Loss: 0.4212 Acc: 0.8647
+Epoch 32/99
+----------
+training Loss: 0.1829 Acc: 0.9533
+validation Loss: 0.4154 Acc: 0.8632
+Epoch 33/99
+----------
+training Loss: 0.1741 Acc: 0.9564
+validation Loss: 0.4112 Acc: 0.8659
+Epoch 34/99
+----------
+training Loss: 0.1627 Acc: 0.9601
+validation Loss: 0.4150 Acc: 0.8635
+Epoch 35/99
+----------
+training Loss: 0.1564 Acc: 0.9629
+validation Loss: 0.4127 Acc: 0.8647
+Epoch 36/99
+----------
+training Loss: 0.1509 Acc: 0.9647
+validation Loss: 0.4125 Acc: 0.8653
+Epoch 37/99
+----------
+training Loss: 0.1431 Acc: 0.9675
+validation Loss: 0.4102 Acc: 0.8677
+Epoch 38/99
+----------
+training Loss: 0.1372 Acc: 0.9704
+validation Loss: 0.4138 Acc: 0.8674
+Epoch 39/99
+----------
+training Loss: 0.1329 Acc: 0.9705
+validation Loss: 0.4044 Acc: 0.8674
+Epoch 40/99
+----------
+training Loss: 0.1231 Acc: 0.9755
+validation Loss: 0.4022 Acc: 0.8683
+Epoch 41/99
+----------
+training Loss: 0.1179 Acc: 0.9750
+validation Loss: 0.4056 Acc: 0.8686
+Epoch 42/99
+----------
+training Loss: 0.1129 Acc: 0.9769
+validation Loss: 0.4051 Acc: 0.8710
+Epoch 43/99
+----------
+training Loss: 0.1075 Acc: 0.9791
+validation Loss: 0.4054 Acc: 0.8698
+Epoch 44/99
+----------
+training Loss: 0.1039 Acc: 0.9810
+validation Loss: 0.4060 Acc: 0.8716
+Epoch 45/99
+----------
+training Loss: 0.0991 Acc: 0.9819
+validation Loss: 0.4047 Acc: 0.8731
+Epoch 46/99
+----------
+training Loss: 0.0948 Acc: 0.9838
+validation Loss: 0.4048 Acc: 0.8740
+Epoch 47/99
+----------
+training Loss: 0.0920 Acc: 0.9834
+validation Loss: 0.4070 Acc: 0.8722
+Epoch 48/99
+----------
+training Loss: 0.0868 Acc: 0.9853
+validation Loss: 0.4053 Acc: 0.8710
+Epoch 49/99
+----------
+training Loss: 0.0825 Acc: 0.9865
+validation Loss: 0.4102 Acc: 0.8707
+Epoch 50/99
+----------
+training Loss: 0.0788 Acc: 0.9876
+validation Loss: 0.4024 Acc: 0.8740
+Epoch 51/99
+----------
+training Loss: 0.0756 Acc: 0.9891
+validation Loss: 0.4063 Acc: 0.8722
+Epoch 52/99
+----------
+training Loss: 0.0752 Acc: 0.9882
+validation Loss: 0.4024 Acc: 0.8737
+Epoch 53/99
+----------
+training Loss: 0.0693 Acc: 0.9905
+validation Loss: 0.4108 Acc: 0.8713
+Epoch 54/99
+----------
+training Loss: 0.0667 Acc: 0.9910
+validation Loss: 0.4086 Acc: 0.8683
+Epoch 55/99
+----------
+training Loss: 0.0644 Acc: 0.9927
+validation Loss: 0.4084 Acc: 0.8698
+Epoch 56/99
+----------
+training Loss: 0.0626 Acc: 0.9917
+validation Loss: 0.4074 Acc: 0.8719
+Epoch 57/99
+----------
+training Loss: 0.0599 Acc: 0.9923
+validation Loss: 0.4126 Acc: 0.8716
+Epoch 58/99
+----------
+training Loss: 0.0567 Acc: 0.9936
+validation Loss: 0.4105 Acc: 0.8731
+Epoch 59/99
+----------
+training Loss: 0.0551 Acc: 0.9943
+validation Loss: 0.4121 Acc: 0.8728
+Epoch 60/99
+----------
+training Loss: 0.0532 Acc: 0.9945
+validation Loss: 0.4104 Acc: 0.8737
+Epoch 61/99
+----------
+training Loss: 0.0518 Acc: 0.9945
+validation Loss: 0.4134 Acc: 0.8710
+Epoch 62/99
+----------
+training Loss: 0.0498 Acc: 0.9954
+validation Loss: 0.4116 Acc: 0.8755
+Epoch 63/99
+----------
+training Loss: 0.0469 Acc: 0.9961
+validation Loss: 0.4210 Acc: 0.8728
+Epoch 64/99
+----------
+training Loss: 0.0459 Acc: 0.9958
+validation Loss: 0.4120 Acc: 0.8707
+Epoch 65/99
+----------
+training Loss: 0.0436 Acc: 0.9964
+validation Loss: 0.4148 Acc: 0.8722
+Epoch 66/99
+----------
+training Loss: 0.0430 Acc: 0.9955
+validation Loss: 0.4170 Acc: 0.8716
+Epoch 67/99
+----------
+training Loss: 0.0413 Acc: 0.9964
+validation Loss: 0.4131 Acc: 0.8740
+Epoch 68/99
+----------
+training Loss: 0.0404 Acc: 0.9969
+validation Loss: 0.4098 Acc: 0.8755
+Epoch 69/99
+----------
+training Loss: 0.0388 Acc: 0.9967
+validation Loss: 0.4141 Acc: 0.8743
+Epoch 70/99
+----------
+training Loss: 0.0373 Acc: 0.9973
+validation Loss: 0.4185 Acc: 0.8725
+Epoch 71/99
+----------
+training Loss: 0.0349 Acc: 0.9973
+validation Loss: 0.4109 Acc: 0.8755
+Epoch 72/99
+----------
+training Loss: 0.0342 Acc: 0.9977
+validation Loss: 0.4217 Acc: 0.8737
+Epoch 73/99
+----------
+training Loss: 0.0344 Acc: 0.9973
+validation Loss: 0.4231 Acc: 0.8728
+Epoch 74/99
+----------
+training Loss: 0.0325 Acc: 0.9980
+validation Loss: 0.4147 Acc: 0.8749
+Epoch 75/99
+----------
+training Loss: 0.0321 Acc: 0.9981
+validation Loss: 0.4192 Acc: 0.8746
+Epoch 76/99
+----------
+training Loss: 0.0307 Acc: 0.9979
+validation Loss: 0.4183 Acc: 0.8770
+Epoch 77/99
+----------
+training Loss: 0.0301 Acc: 0.9981
+validation Loss: 0.4193 Acc: 0.8752
+Epoch 78/99
+----------
+training Loss: 0.0293 Acc: 0.9983
+validation Loss: 0.4243 Acc: 0.8734
+Epoch 79/99
+----------
+training Loss: 0.0273 Acc: 0.9987
+validation Loss: 0.4260 Acc: 0.8743
+Epoch 80/99
+----------
+training Loss: 0.0268 Acc: 0.9987
+validation Loss: 0.4167 Acc: 0.8731
+Epoch 81/99
+----------
+training Loss: 0.0274 Acc: 0.9982
+validation Loss: 0.4208 Acc: 0.8752
+Epoch 82/99
+----------
+training Loss: 0.0252 Acc: 0.9990
+validation Loss: 0.4244 Acc: 0.8746
+Epoch 83/99
+----------
+training Loss: 0.0262 Acc: 0.9985
+validation Loss: 0.4309 Acc: 0.8740
+Epoch 84/99
+----------
+training Loss: 0.0253 Acc: 0.9989
+validation Loss: 0.4222 Acc: 0.8785
+Epoch 85/99
+----------
+training Loss: 0.0239 Acc: 0.9988
+validation Loss: 0.4246 Acc: 0.8755
+Epoch 86/99
+----------
+training Loss: 0.0247 Acc: 0.9990
+validation Loss: 0.4234 Acc: 0.8770
+Epoch 87/99
+----------
+training Loss: 0.0225 Acc: 0.9988
+validation Loss: 0.4235 Acc: 0.8758
+Epoch 88/99
+----------
+training Loss: 0.0221 Acc: 0.9993
+validation Loss: 0.4246 Acc: 0.8758
+Epoch 89/99
+----------
+training Loss: 0.0217 Acc: 0.9989
+validation Loss: 0.4267 Acc: 0.8749
+Epoch 90/99
+----------
+training Loss: 0.0215 Acc: 0.9992
+validation Loss: 0.4293 Acc: 0.8761
+Epoch 91/99
+----------
+training Loss: 0.0207 Acc: 0.9987
+validation Loss: 0.4339 Acc: 0.8779
+Epoch 92/99
+----------
+training Loss: 0.0198 Acc: 0.9995
+validation Loss: 0.4332 Acc: 0.8746
+Epoch 93/99
+----------
+training Loss: 0.0194 Acc: 0.9993
+validation Loss: 0.4276 Acc: 0.8761
+Epoch 94/99
+----------
+training Loss: 0.0189 Acc: 0.9993
+validation Loss: 0.4303 Acc: 0.8764
+Epoch 95/99
+----------
+training Loss: 0.0191 Acc: 0.9995
+validation Loss: 0.4292 Acc: 0.8764
+Epoch 96/99
+----------
+training Loss: 0.0179 Acc: 0.9997
+validation Loss: 0.4292 Acc: 0.8773
+Epoch 97/99
+----------
+training Loss: 0.0184 Acc: 0.9995
+validation Loss: 0.4351 Acc: 0.8752
+Epoch 98/99
+----------
+training Loss: 0.0177 Acc: 0.9994
+validation Loss: 0.4297 Acc: 0.8758
+Epoch 99/99
+----------
+training Loss: 0.0164 Acc: 0.9994
+validation Loss: 0.4326 Acc: 0.8773
+Training complete in 66m 29s
+Best val Acc: 0.878524
+
+
+###############################################################################
+Peregrine Cluster
+Job 18161273 for user 's2863685'
+Finished at: Wed Feb 24 13:16:00 CET 2021
+
+Job details:
+============
+
+Job ID              : 18161273
+Name                : res18_sgd_exp
+User                : s2863685
+Partition           : gpu
+Nodes               : pg-gpu30
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2021-02-24T10:54:35
+Start               : 2021-02-24T12:07:39
+End                 : 2021-02-24T13:16:00
+Reserved walltime   : 03:00:00
+Used walltime       : 01:08:21
+Used CPU time       : 04:24:55 (efficiency: 32.30%)
+% User (Computation): 87.09%
+% System (I/O)      : 12.91%
+Mem reserved        : 8000M/node
+Max Mem used        : 2.81G (pg-gpu30)
+Max Disk Write      : 20.48K (pg-gpu30)
+Max Disk Read       : 1.05M (pg-gpu30)
+Average GPU usage   : 37.4% (pg-gpu30)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

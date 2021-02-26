@@ -1,0 +1,84 @@
+slurmstepd: error: *** JOB 18179105 ON pg-gpu40 CANCELLED AT 2021-02-25T02:18:03 ***
+
+
+###############################################################################
+Peregrine Cluster
+Job 18179105 for user 's2863685'
+Finished at: Thu Feb 25 02:18:05 CET 2021
+
+Job details:
+============
+
+Job ID              : 18179105
+Name                : res18_Adam_exp
+User                : s2863685
+Partition           : gpu
+Nodes               : pg-gpu40
+Number of Nodes     : 1
+Cores               : 12
+State               : CANCELLED,CANCELLED by 32863685
+Submit              : 2021-02-25T02:16:40
+Start               : 2021-02-25T02:17:55
+End                 : 2021-02-25T02:18:04
+Reserved walltime   : 03:00:00
+Used walltime       : 00:00:09
+Used CPU time       : --
+% User (Computation): 61.44%
+% System (I/O)      : 38.34%
+Mem reserved        : 8000M/node
+Max Mem used        : 0.00  (pg-gpu40)
+Max Disk Write      : 0.00  (pg-gpu40)
+Max Disk Read       : 0.00  (pg-gpu40)
+Average GPU usage   : No GPU metrics available (pg-gpu40)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
+slurmstepd: error: *** JOB 18179110 ON pg-gpu35 CANCELLED AT 2021-02-25T02:18:09 ***
+
+
+###############################################################################
+Peregrine Cluster
+Job 18179110 for user 's2863685'
+Finished at: Thu Feb 25 02:18:11 CET 2021
+
+Job details:
+============
+
+Job ID              : 18179110
+Name                : res18_Adam_exp
+User                : s2863685
+Partition           : gpu
+Nodes               : pg-gpu35
+Number of Nodes     : 1
+Cores               : 12
+State               : CANCELLED,CANCELLED by 32863685
+Submit              : 2021-02-25T02:16:54
+Start               : 2021-02-25T02:18:00
+End                 : 2021-02-25T02:18:10
+Reserved walltime   : 03:00:00
+Used walltime       : 00:00:10
+Used CPU time       : --
+% User (Computation): 70.48%
+% System (I/O)      : 29.52%
+Mem reserved        : 8000M/node
+Max Mem used        : 0.00  (pg-gpu35)
+Max Disk Write      : 0.00  (pg-gpu35)
+Max Disk Read       : 0.00  (pg-gpu35)
+Average GPU usage   : No GPU metrics available (pg-gpu35)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

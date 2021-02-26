@@ -1,3 +1,6 @@
+# --------------------------------------------
+# Library Imports
+# --------------------------------------------
 import torch
 import torchvision
 from torch import optim
@@ -11,7 +14,13 @@ import time
 import copy
 from typing import Callable
 
-
+# --------------------------------------------
+# Functions
+# --------------------------------------------
+# Function that initializes the model;
+# Can be used to initialize a ResNet18 or ResNet34 model;
+# Sets the number of clases for the model
+# and whether to use the pretrained neurons -- i.e. pretrained
 def initialize_model(model_name, num_classes, pretrained=False):
     model = None
 
@@ -29,7 +38,8 @@ def initialize_model(model_name, num_classes, pretrained=False):
 
     return model
 
-
+# Function that initializes the optimizer
+# Can set the learning rate, momentum and regularizer parameters
 def initialize_optimizer(optim_name, params, lr=0.001, momentum=0.0,
                          weight_decay=0.0, betas=(0, 0), eps=0):
     if optim_name == "SGD":
@@ -40,22 +50,28 @@ def initialize_optimizer(optim_name, params, lr=0.001, momentum=0.0,
         raise ValueError("Invalid optimizer name was given.")
     return optimizer
 
-
+# Function that trains the model
+# More detailed explanation in the function itself
 def train_model(model, dataloaders: dict, criterion: Callable, optimizer, regulrz=None, num_epochs=15):
-    """ The function handles both the training and validation of a given model.
+    """
+    The function handles both the training and validation of a given model.
     It trains for the specified number of epochs and runs a full validation step afterwards, while keeping track of the
     best performing model (validation accuracy).
-    It returns the best performing model."""
+    It returns the best performing model.
+    """
     since = time.time()
     val_acc_history = []
+
     # copy model weights
     best_model_wts = copy.deepcopy(model.state_dict())
     best_acc = 0.0
     epoch_losses = []
     epoch_accs = []
+
     for epoch in range(num_epochs):
         print(f'Epoch {epoch}/{num_epochs-1}')
         print('-'*10)
+
         # Each epoch has a training and validation phase
         for phase in [train_folder, validation_folder]:
             if phase == train_folder:
@@ -64,14 +80,17 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, regulr
                 model.eval()
             running_loss = 0.0
             running_corrects = 0
+
             # Iterate over data
             for inputs, labels in dataloaders[phase]:
                 inputs = inputs.to('cuda')
                 if regulrz:
                     regulrz(inputs)
                 labels = labels.to('cuda')
+
                 # zero the parameter gradients
                 optimizer.zero_grad()
+
                 # forward
                 # track history if in train
                 with torch.set_grad_enabled(phase == train_folder):
@@ -83,11 +102,14 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, regulr
                         optimizer.step()
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(preds == labels.data)
+
             epoch_loss = running_loss / len(dataloaders[phase].dataset)
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
             epoch_losses.append(epoch_loss)
             epoch_accs.append(epoch_acc)
+
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
+
             # deep copy the model
             if phase == validation_folder:
                 val_acc_history.append(epoch_acc)
@@ -104,7 +126,7 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, regulr
     return model, val_acc_history, [epoch_losses, epoch_accs]
 
 
-# This function will recursively replace all relu module to selu module.
+# This function will recursively replace ReLU with another activation function
 def replace_act_funct(model, current, new):
     for child_name, child in model.named_children():
         if isinstance(child, current):
@@ -112,13 +134,14 @@ def replace_act_funct(model, current, new):
         else:
             replace_act_funct(child, current, new)
 
-
+# --------------------------------------------
+# Model Settings
+# --------------------------------------------
 data_dir = f"Dataset{os.path.sep}Food"
 num_classes = 10
 batch_size = 64  # this can be increased accordingly, check CPU/GPU load, for me it only consumed 20% GPU
 num_epochs = 100
 input_size = 224
-
 
 # original dropout_list and weight_decay_list are not doable in one peregrine job due to too high runtime,
 # thus change regularizations according to experiment setting
@@ -152,7 +175,9 @@ dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size
 criterion = nn.CrossEntropyLoss()
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 
-
+# --------------------------------------------
+# Code when file is run 
+# --------------------------------------------
 if __name__ == "__main__":
     model_name = "resnet18"
     model = initialize_model(model_name, num_classes)
@@ -162,6 +187,7 @@ if __name__ == "__main__":
     dropout = False
     weight_decay = False
 
+    # If/Else statements for different experiments
     if dropout:
         for drpt in dropout_list:
             optimizer = initialize_optimizer(optim_name, params_to_update)
