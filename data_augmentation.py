@@ -18,16 +18,16 @@ def augment_class(class_name):
     img_batch = []
     print(f"Reading images of class {class_name}...")
     for i in range(req_augmt):
-        chosen_img = all_images[random.randint(0, all_img_amt-augmt_img_amt-1)]
+        chosen_img = all_images[random.randint(0, all_img_amt - augmt_img_amt - 1)]
         img = np.array(Image.open(os.path.join(os.path.abspath('.'), chosen_img)))
         img_batch.append(img)
-        if (i+1) % 10 == 0:  # augment & save images in batches of 10 to consume less memory
+        if (i + 1) % 10 == 0:  # augment & save images in batches of 10 to consume less memory
             # print("Augmentation in process...")
-            img_batch = aug.augment_images(img_batch)   # augment_images() accepts a 4D np.array or list of 3D np.arrays
+            img_batch = aug.augment_images(img_batch)  # augment_images() accepts a 4D np.array or list of 3D np.arrays
             # print(f"Saving images...")
             for idx, new_img in enumerate(img_batch):
-                Image.fromarray(new_img).save(f"{all_img_amt+i+idx+1}_.jpg")
-            print(f"{class_name} class batch augmentation complete.\nBatch count: {i//10}\n")
+                Image.fromarray(new_img).save(f"{all_img_amt + i + idx + 1}_.jpg")
+            print(f"{class_name} class batch augmentation complete.\nBatch count: {i // 10}\n")
             img_batch = []
 
     os.chdir("..")

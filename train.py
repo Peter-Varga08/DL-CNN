@@ -71,7 +71,7 @@ def train_model(model, dataloaders: dict, criterion: Callable, optimizer, regulr
     for epoch in range(num_epochs):
         print(f'Epoch {epoch}/{num_epochs-1}')
         print('-'*10)
-
+        
         # Each epoch has a training and validation phase
         for phase in [train_folder, validation_folder]:
             if phase == train_folder:
@@ -151,8 +151,8 @@ weight_decay_list = [1e-3, 1e-2, 1e-1]
 # weight_decay_list = [1e-3]
 
 train_folder = "train"
-validation_folder = "val"   # for parameter tuning
-evaluation_folder = "eval"   # for performance assessment, not yet used in current git commit
+validation_folder = "val"  # for parameter tuning
+evaluation_folder = "eval"  # for performance assessment, not yet used in current git commit
 
 # more transformations can be added later on
 data_transforms = {
@@ -168,10 +168,12 @@ data_transforms = {
     ])
 }
 
-image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x]) for x in [train_folder, validation_folder]}
+image_datasets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x]) for x in
+                  [train_folder, validation_folder]}
 # Create training and validation dataloaders
 dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=batch_size,
-                                                   shuffle=True, num_workers=4) for x in [train_folder, validation_folder]}
+                                                   shuffle=True, num_workers=4) for x in
+                    [train_folder, validation_folder]}
 criterion = nn.CrossEntropyLoss()
 device = ('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -211,7 +213,7 @@ if __name__ == "__main__":
                 for item in epoch_info[1]:
                     file_obj.write(f"{item}\n")
     else:
-        optimizer = initialize_optimizer(optim_name, params_to_update, momentum=0.9)
+        optimizer = initialize_optimizer(optim_name, params_to_update)
         model, hist, epoch_info = train_model(model, dataloaders_dict, criterion,
                                               optimizer, regulrz=None, num_epochs=num_epochs)
         with open(f"scratch-train_epoch_losses_{train_folder}.txt", "w") as file_obj:
