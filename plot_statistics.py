@@ -214,22 +214,3 @@ avg_accs_wd001, min_accs_wd001 = calc_acc_stat(val_accs_wd001)  # (0.40936112777
 avg_loss_wd0001, min_loss_wd0001 = calc_loss_stat(val_loss_wd0001)  # (2.007448709316073, 1.33426734502972)
 avg_accs_wd0001, min_accs_wd0001 = calc_acc_stat(val_accs_wd0001)  # (0.4005938812237552, 0.5650869826034792)
 # ----------------------------------------------------------------------------------------------------------------------
-
-# multiple_graphs([val_accs_noreg, val_accs_drp01, val_accs_drp02, val_accs_drp03], "accuracy",
-#                 "Averaged accuracy",
-#                 f"Accuracies of different dropout values",
-#                 ["p=0", "p=0.1", "p=0.2", "p=0.3"])
-#
-#
-# train_path_wd = f"{epoch_path}{os.path.sep}scratch-trained{os.path.sep}weight_dec"
-#
-# train_accs_wd01, val_accs_wd01 = retrieve_epoch_statistics(train_path_wd, f"scratch-train_weight_dec-0.1",
-#                                                              "accs_train_augmented_1500")
-# train_accs_wd001, val_accs_wd001 = retrieve_epoch_statistics(train_path_wd, f"scratch-train_weight_dec-0.01",
-#                                                              "accs_train_augmented_1500")
-# train_accs_wd0001, val_accs_wd0001 = retrieve_epoch_statistics(train_path_wd, f"scratch-train_weight_dec-0.001",
-#                                                              "accs_train_augmented_1500")
-# multiple_graphs([val_accs_noreg, val_accs_wd01, val_accs_wd001, val_accs_wd0001], "accuracy",
-#                 "Averaged accuracy",
-#                 f"Accuracies of different weight decay values",
-#                 ["weight decay=0", "weight decay=0.1", "weight decay=0.01", "weight decay=0.001"])

@@ -1,0 +1,443 @@
+Epoch 0/99
+----------
+train_augmented_1500 Loss: 2.2412 Acc: 0.1803
+val Loss: 2.1639 Acc: 0.2391
+Epoch 1/99
+----------
+train_augmented_1500 Loss: 2.1384 Acc: 0.2407
+val Loss: 2.0988 Acc: 0.2451
+Epoch 2/99
+----------
+train_augmented_1500 Loss: 2.0691 Acc: 0.2703
+val Loss: 2.0521 Acc: 0.2687
+Epoch 3/99
+----------
+train_augmented_1500 Loss: 2.0231 Acc: 0.2857
+val Loss: 2.0603 Acc: 0.2475
+Epoch 4/99
+----------
+train_augmented_1500 Loss: 1.9766 Acc: 0.3089
+val Loss: 1.9949 Acc: 0.2972
+Epoch 5/99
+----------
+train_augmented_1500 Loss: 1.9351 Acc: 0.3243
+val Loss: 1.9744 Acc: 0.2795
+Epoch 6/99
+----------
+train_augmented_1500 Loss: 1.8901 Acc: 0.3437
+val Loss: 1.9149 Acc: 0.3182
+Epoch 7/99
+----------
+train_augmented_1500 Loss: 1.8527 Acc: 0.3529
+val Loss: 1.8927 Acc: 0.3227
+Epoch 8/99
+----------
+train_augmented_1500 Loss: 1.8160 Acc: 0.3689
+val Loss: 1.8057 Acc: 0.3590
+Epoch 9/99
+----------
+train_augmented_1500 Loss: 1.7860 Acc: 0.3792
+val Loss: 2.2027 Acc: 0.2349
+Epoch 10/99
+----------
+train_augmented_1500 Loss: 1.7556 Acc: 0.3905
+val Loss: 1.8013 Acc: 0.3626
+Epoch 11/99
+----------
+train_augmented_1500 Loss: 1.7316 Acc: 0.3945
+val Loss: 1.8151 Acc: 0.3536
+Epoch 12/99
+----------
+train_augmented_1500 Loss: 1.7035 Acc: 0.4087
+val Loss: 1.8377 Acc: 0.3452
+Epoch 13/99
+----------
+train_augmented_1500 Loss: 1.6782 Acc: 0.4233
+val Loss: 1.7396 Acc: 0.3752
+Epoch 14/99
+----------
+train_augmented_1500 Loss: 1.6532 Acc: 0.4284
+val Loss: 1.7843 Acc: 0.3707
+Epoch 15/99
+----------
+train_augmented_1500 Loss: 1.6280 Acc: 0.4353
+val Loss: 1.8302 Acc: 0.3341
+Epoch 16/99
+----------
+train_augmented_1500 Loss: 1.6059 Acc: 0.4421
+val Loss: 1.6628 Acc: 0.4136
+Epoch 17/99
+----------
+train_augmented_1500 Loss: 1.5819 Acc: 0.4554
+val Loss: 1.7635 Acc: 0.3614
+Epoch 18/99
+----------
+train_augmented_1500 Loss: 1.5586 Acc: 0.4621
+val Loss: 1.7269 Acc: 0.3917
+Epoch 19/99
+----------
+train_augmented_1500 Loss: 1.5395 Acc: 0.4709
+val Loss: 2.3716 Acc: 0.2978
+Epoch 20/99
+----------
+train_augmented_1500 Loss: 1.5191 Acc: 0.4801
+val Loss: 1.7931 Acc: 0.3725
+Epoch 21/99
+----------
+train_augmented_1500 Loss: 1.5047 Acc: 0.4812
+val Loss: 2.0609 Acc: 0.3068
+Epoch 22/99
+----------
+train_augmented_1500 Loss: 1.4834 Acc: 0.4888
+val Loss: 2.5285 Acc: 0.2319
+Epoch 23/99
+----------
+train_augmented_1500 Loss: 1.4688 Acc: 0.5004
+val Loss: 1.7014 Acc: 0.4028
+Epoch 24/99
+----------
+train_augmented_1500 Loss: 1.4453 Acc: 0.4985
+val Loss: 1.8442 Acc: 0.3827
+Epoch 25/99
+----------
+train_augmented_1500 Loss: 1.4358 Acc: 0.5059
+val Loss: 1.7945 Acc: 0.3965
+Epoch 26/99
+----------
+train_augmented_1500 Loss: 1.4216 Acc: 0.5126
+val Loss: 2.1227 Acc: 0.3383
+Epoch 27/99
+----------
+train_augmented_1500 Loss: 1.4038 Acc: 0.5135
+val Loss: 1.6744 Acc: 0.4124
+Epoch 28/99
+----------
+train_augmented_1500 Loss: 1.3893 Acc: 0.5218
+val Loss: 1.6209 Acc: 0.4307
+Epoch 29/99
+----------
+train_augmented_1500 Loss: 1.3705 Acc: 0.5293
+val Loss: 1.7431 Acc: 0.3860
+Epoch 30/99
+----------
+train_augmented_1500 Loss: 1.3565 Acc: 0.5341
+val Loss: 2.3799 Acc: 0.3479
+Epoch 31/99
+----------
+train_augmented_1500 Loss: 1.3445 Acc: 0.5404
+val Loss: 1.6054 Acc: 0.4457
+Epoch 32/99
+----------
+train_augmented_1500 Loss: 1.3231 Acc: 0.5485
+val Loss: 1.6859 Acc: 0.4448
+Epoch 33/99
+----------
+train_augmented_1500 Loss: 1.3098 Acc: 0.5520
+val Loss: 1.6298 Acc: 0.4523
+Epoch 34/99
+----------
+train_augmented_1500 Loss: 1.2949 Acc: 0.5545
+val Loss: 1.9059 Acc: 0.3833
+Epoch 35/99
+----------
+train_augmented_1500 Loss: 1.2833 Acc: 0.5631
+val Loss: 1.9294 Acc: 0.3875
+Epoch 36/99
+----------
+train_augmented_1500 Loss: 1.2662 Acc: 0.5707
+val Loss: 2.1111 Acc: 0.3824
+Epoch 37/99
+----------
+train_augmented_1500 Loss: 1.2458 Acc: 0.5737
+val Loss: 1.6126 Acc: 0.4538
+Epoch 38/99
+----------
+train_augmented_1500 Loss: 1.2336 Acc: 0.5801
+val Loss: 1.6016 Acc: 0.4511
+Epoch 39/99
+----------
+train_augmented_1500 Loss: 1.2167 Acc: 0.5853
+val Loss: 1.4898 Acc: 0.4865
+Epoch 40/99
+----------
+train_augmented_1500 Loss: 1.2026 Acc: 0.5955
+val Loss: 1.5604 Acc: 0.4610
+Epoch 41/99
+----------
+train_augmented_1500 Loss: 1.1892 Acc: 0.5996
+val Loss: 1.9647 Acc: 0.3791
+Epoch 42/99
+----------
+train_augmented_1500 Loss: 1.1689 Acc: 0.6046
+val Loss: 1.8067 Acc: 0.4046
+Epoch 43/99
+----------
+train_augmented_1500 Loss: 1.1574 Acc: 0.6109
+val Loss: 2.2728 Acc: 0.3470
+Epoch 44/99
+----------
+train_augmented_1500 Loss: 1.1482 Acc: 0.6145
+val Loss: 2.3229 Acc: 0.3560
+Epoch 45/99
+----------
+train_augmented_1500 Loss: 1.1257 Acc: 0.6234
+val Loss: 1.8145 Acc: 0.4004
+Epoch 46/99
+----------
+train_augmented_1500 Loss: 1.1118 Acc: 0.6300
+val Loss: 1.8943 Acc: 0.3992
+Epoch 47/99
+----------
+train_augmented_1500 Loss: 1.1004 Acc: 0.6291
+val Loss: 1.5321 Acc: 0.4850
+Epoch 48/99
+----------
+train_augmented_1500 Loss: 1.0757 Acc: 0.6408
+val Loss: 1.6164 Acc: 0.4733
+Epoch 49/99
+----------
+train_augmented_1500 Loss: 1.0632 Acc: 0.6461
+val Loss: 1.8326 Acc: 0.4325
+Epoch 50/99
+----------
+train_augmented_1500 Loss: 1.0563 Acc: 0.6481
+val Loss: 1.8027 Acc: 0.4466
+Epoch 51/99
+----------
+train_augmented_1500 Loss: 1.0365 Acc: 0.6560
+val Loss: 1.5917 Acc: 0.4763
+Epoch 52/99
+----------
+train_augmented_1500 Loss: 1.0174 Acc: 0.6609
+val Loss: 2.1054 Acc: 0.3980
+Epoch 53/99
+----------
+train_augmented_1500 Loss: 1.0039 Acc: 0.6666
+val Loss: 1.9709 Acc: 0.4379
+Epoch 54/99
+----------
+train_augmented_1500 Loss: 0.9871 Acc: 0.6757
+val Loss: 2.5078 Acc: 0.3302
+Epoch 55/99
+----------
+train_augmented_1500 Loss: 0.9726 Acc: 0.6802
+val Loss: 2.2544 Acc: 0.4241
+Epoch 56/99
+----------
+train_augmented_1500 Loss: 0.9498 Acc: 0.6869
+val Loss: 1.6877 Acc: 0.4655
+Epoch 57/99
+----------
+train_augmented_1500 Loss: 0.9383 Acc: 0.6899
+val Loss: 2.8416 Acc: 0.3425
+Epoch 58/99
+----------
+train_augmented_1500 Loss: 0.9258 Acc: 0.6963
+val Loss: 2.0644 Acc: 0.4058
+Epoch 59/99
+----------
+train_augmented_1500 Loss: 0.9120 Acc: 0.7019
+val Loss: 1.8340 Acc: 0.4370
+Epoch 60/99
+----------
+train_augmented_1500 Loss: 0.8973 Acc: 0.7065
+val Loss: 1.5709 Acc: 0.4859
+Epoch 61/99
+----------
+train_augmented_1500 Loss: 0.8822 Acc: 0.7117
+val Loss: 1.3200 Acc: 0.5654
+Epoch 62/99
+----------
+train_augmented_1500 Loss: 0.8549 Acc: 0.7210
+val Loss: 2.1508 Acc: 0.4253
+Epoch 63/99
+----------
+train_augmented_1500 Loss: 0.8373 Acc: 0.7274
+val Loss: 1.9261 Acc: 0.4739
+Epoch 64/99
+----------
+train_augmented_1500 Loss: 0.8278 Acc: 0.7339
+val Loss: 1.8749 Acc: 0.4592
+Epoch 65/99
+----------
+train_augmented_1500 Loss: 0.8098 Acc: 0.7416
+val Loss: 1.7197 Acc: 0.4724
+Epoch 66/99
+----------
+train_augmented_1500 Loss: 0.7951 Acc: 0.7423
+val Loss: 2.2175 Acc: 0.3959
+Epoch 67/99
+----------
+train_augmented_1500 Loss: 0.7746 Acc: 0.7507
+val Loss: 1.7401 Acc: 0.4850
+Epoch 68/99
+----------
+train_augmented_1500 Loss: 0.7568 Acc: 0.7585
+val Loss: 2.7787 Acc: 0.3416
+Epoch 69/99
+----------
+train_augmented_1500 Loss: 0.7483 Acc: 0.7621
+val Loss: 1.4827 Acc: 0.5279
+Epoch 70/99
+----------
+train_augmented_1500 Loss: 0.7268 Acc: 0.7688
+val Loss: 3.4527 Acc: 0.2930
+Epoch 71/99
+----------
+train_augmented_1500 Loss: 0.7062 Acc: 0.7755
+val Loss: 1.6547 Acc: 0.5009
+Epoch 72/99
+----------
+train_augmented_1500 Loss: 0.6894 Acc: 0.7827
+val Loss: 1.4951 Acc: 0.5336
+Epoch 73/99
+----------
+train_augmented_1500 Loss: 0.6679 Acc: 0.7911
+val Loss: 2.2231 Acc: 0.4220
+Epoch 74/99
+----------
+train_augmented_1500 Loss: 0.6530 Acc: 0.7984
+val Loss: 3.3585 Acc: 0.3809
+Epoch 75/99
+----------
+train_augmented_1500 Loss: 0.6323 Acc: 0.8037
+val Loss: 2.5213 Acc: 0.4034
+Epoch 76/99
+----------
+train_augmented_1500 Loss: 0.6131 Acc: 0.8081
+val Loss: 3.1986 Acc: 0.3128
+Epoch 77/99
+----------
+train_augmented_1500 Loss: 0.6016 Acc: 0.8208
+val Loss: 1.4642 Acc: 0.5465
+Epoch 78/99
+----------
+train_augmented_1500 Loss: 0.5747 Acc: 0.8283
+val Loss: 1.7577 Acc: 0.4784
+Epoch 79/99
+----------
+train_augmented_1500 Loss: 0.5610 Acc: 0.8293
+val Loss: 1.6428 Acc: 0.4985
+Epoch 80/99
+----------
+train_augmented_1500 Loss: 0.5309 Acc: 0.8429
+val Loss: 1.9043 Acc: 0.4568
+Epoch 81/99
+----------
+train_augmented_1500 Loss: 0.5165 Acc: 0.8480
+val Loss: 1.5718 Acc: 0.5297
+Epoch 82/99
+----------
+train_augmented_1500 Loss: 0.4983 Acc: 0.8547
+val Loss: 2.3042 Acc: 0.4337
+Epoch 83/99
+----------
+train_augmented_1500 Loss: 0.4813 Acc: 0.8643
+val Loss: 1.7593 Acc: 0.5069
+Epoch 84/99
+----------
+train_augmented_1500 Loss: 0.4641 Acc: 0.8681
+val Loss: 1.6694 Acc: 0.5348
+Epoch 85/99
+----------
+train_augmented_1500 Loss: 0.4407 Acc: 0.8765
+val Loss: 2.6329 Acc: 0.3854
+Epoch 86/99
+----------
+train_augmented_1500 Loss: 0.4204 Acc: 0.8860
+val Loss: 2.1093 Acc: 0.4622
+Epoch 87/99
+----------
+train_augmented_1500 Loss: 0.4053 Acc: 0.8907
+val Loss: 1.9852 Acc: 0.4520
+Epoch 88/99
+----------
+train_augmented_1500 Loss: 0.3970 Acc: 0.8921
+val Loss: 1.9530 Acc: 0.4682
+Epoch 89/99
+----------
+train_augmented_1500 Loss: 0.3703 Acc: 0.9029
+val Loss: 3.3853 Acc: 0.3677
+Epoch 90/99
+----------
+train_augmented_1500 Loss: 0.3534 Acc: 0.9113
+val Loss: 2.4137 Acc: 0.3908
+Epoch 91/99
+----------
+train_augmented_1500 Loss: 0.3357 Acc: 0.9171
+val Loss: 1.5461 Acc: 0.5393
+Epoch 92/99
+----------
+train_augmented_1500 Loss: 0.3148 Acc: 0.9243
+val Loss: 1.9183 Acc: 0.5084
+Epoch 93/99
+----------
+train_augmented_1500 Loss: 0.2998 Acc: 0.9301
+val Loss: 2.3627 Acc: 0.4109
+Epoch 94/99
+----------
+train_augmented_1500 Loss: 0.2901 Acc: 0.9324
+val Loss: 2.5748 Acc: 0.4262
+Epoch 95/99
+----------
+train_augmented_1500 Loss: 0.2770 Acc: 0.9378
+val Loss: 1.9876 Acc: 0.4805
+Epoch 96/99
+----------
+train_augmented_1500 Loss: 0.2552 Acc: 0.9445
+val Loss: 1.8062 Acc: 0.5186
+Epoch 97/99
+----------
+train_augmented_1500 Loss: 0.2430 Acc: 0.9508
+val Loss: 1.9466 Acc: 0.5198
+Epoch 98/99
+----------
+train_augmented_1500 Loss: 0.2312 Acc: 0.9537
+val Loss: 2.1171 Acc: 0.4856
+Epoch 99/99
+----------
+train_augmented_1500 Loss: 0.2164 Acc: 0.9588
+val Loss: 2.3418 Acc: 0.4391
+Training complete in 71m 44s
+Best val Acc: 0.565387
+
+
+###############################################################################
+Peregrine Cluster
+Job 18136682 for user 's4291093'
+Finished at: Tue Feb 23 02:56:12 CET 2021
+
+Job details:
+============
+
+Job ID              : 18136682
+Name                : scratch-train_augmented1500_weightdec0002
+User                : s4291093
+Partition           : gpu
+Nodes               : pg-gpu18
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2021-02-23T00:26:34
+Start               : 2021-02-23T01:42:33
+End                 : 2021-02-23T02:56:12
+Reserved walltime   : 02:30:00
+Used walltime       : 01:13:39
+Used CPU time       : 04:47:46 (efficiency: 32.56%)
+% User (Computation): 87.44%
+% System (I/O)      : 12.55%
+Mem reserved        : 6000M/node
+Max Mem used        : 2.65G (pg-gpu18)
+Max Disk Write      : 30.72K (pg-gpu18)
+Max Disk Read       : 1.19M (pg-gpu18)
+Average GPU usage   : 35.1% (pg-gpu18)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
